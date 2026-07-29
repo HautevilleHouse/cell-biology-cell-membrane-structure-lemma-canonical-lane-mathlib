@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CellBiologyCellMembraneStructureLemmaCanonicalLaneLean.PhospholipidBilayer
+import HautevilleHouse.CellBiologyCellMembraneStructureLemmaCanonicalLaneLean.MembraneProtein
+import HautevilleHouse.CellBiologyCellMembraneStructureLemmaCanonicalLaneLean.FluidMosaicModel
+import HautevilleHouse.CellBiologyCellMembraneStructureLemmaCanonicalLaneLean.TransportMechanisms
+import HautevilleHouse.CellBiologyCellMembraneStructureLemmaCanonicalLaneLean.SignalTransduction
+import HautevilleHouse.CellBiologyCellMembraneStructureLemmaCanonicalLaneLean.MembraneSkeleton
+
+namespace HautevilleHouse
+namespace CellBiologyCellMembraneStructureLemmaCanonicalLaneLean
+
+def ConstrainedCellMembraneClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_cell_membrane_endgame (A : AdmissibleClass) :
+    ConstrainedCellMembraneClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CellBiologyCellMembraneStructureLemmaCanonicalLaneLean
+end HautevilleHouse
